@@ -1,0 +1,49 @@
+settings_schema.json
+--------------------
+
+
+{
+    "name": "t:settings_schema.whatsapp.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.whatsapp.settings.header.content"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_num",
+        "label": "t:settings_schema.whatsapp.settings.whatsapp_num.label",
+        "info": "t:settings_schema.whatsapp.settings.whatsapp_num.info"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "whatsapp_msn",
+        "label": "t:settings_schema.whatsapp.settings.whatsapp_msn.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "whatsapp_img",
+        "label": "t:settings_schema.whatsapp.settings.whatsapp_img.label"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "whatsapp_asesor",
+        "label": "t:settings_schema.whatsapp.settings.whatsapp_asesor.label"
+      },
+      {
+        "type": "text",
+        "id": "whatsapp_titulo",
+        "label": "t:settings_schema.whatsapp.settings.whatsapp_titulo.label"
+      },
+      {
+        "type": "color",
+        "id": "whatsapp_color",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.whatsapp.settings.whatsapp_color.label"
+      }
+    ]
+  },
+
+
+
+---------------------------------

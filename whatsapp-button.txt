@@ -1,0 +1,102 @@
+ <!-- Botón flotante -->
+    <button class="floating-button" id="whatsappButton">💬</button>
+
+    <!-- Mensaje emergente -->
+    <div class="tooltip" id="tooltip">
+        <div class="tooltip-header">Titulo</div>
+        <div class="tooltip-content">
+            <img src="#" alt="Asistente Virtual">
+            <div>Asesor</div>
+        </div>
+    </div>
+
+     <style>
+        /* Estilos para el botón flotante */
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            /*font-size: 24px;*/
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .floating-button:hover {
+            background-color: {{ settings.whatsapp_color }};
+        }
+
+        /* Estilos para el mensaje emergente */
+        .tooltip {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+            text-align: left;
+            width: 250px;
+        }
+
+        .tooltip-header {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+            background: {{ settings.whatsapp_color }};
+        }
+
+        .tooltip-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .tooltip-content img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    </style>
+
+
+    <script>
+        // Variables con el número de teléfono y mensaje
+        const phoneNumber = "{{ settings.whatsapp_num }}"; // Cambia esto al número de teléfono deseado
+        const message = "{{ settings.whatsapp_msn }}"; // Cambia esto al mensaje deseado
+
+        // Formatear el número de teléfono para eliminar caracteres no numéricos excepto el +
+        const formattedPhoneNumber = phoneNumber.replace(/\D/g, '');
+
+        // URL de WhatsApp
+        const whatsappURL = `https://wa.me/${formattedPhoneNumber}?text=${encodeURIComponent(message)}`;
+
+        // Agregar evento al botón flotante
+        document.getElementById('whatsappButton').addEventListener('click', function() {
+            // Redirigir a la URL de WhatsApp en una nueva pestaña
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Mostrar tooltip al pasar el mouse sobre el botón
+        const whatsappButton = document.getElementById('whatsappButton');
+        const tooltip = document.getElementById('tooltip');
+
+        whatsappButton.addEventListener('mouseover', function() {
+            tooltip.style.display = 'block';
+        });
+
+        whatsappButton.addEventListener('mouseout', function() {
+            tooltip.style.display = 'none';
+        });
+    </script>
+
+

@@ -1,0 +1,34 @@
+
+es.schema.json
+--------------
+
+
+"whatsapp": {
+      "name": "WhatsApp",
+      "settings": {
+        "header": {
+          "content": "Boton WhatsApp"
+        },
+        "whatsapp_num": {
+          "label": "Numero de Whatsapp",
+          "info": "Ingresa tu numero ejemplo +15555555555"
+        },
+        "whatsapp_msn": {
+          "label": "Mensaje"
+        },
+        "whatsapp_img": {
+          "label": "Imagen de Asesor"
+        },
+        "whatsapp_asesor": {
+          "label": "Nombre de Asesor"
+        },
+        "whatsapp_titulo": {
+          "label": "Titulo De Boton"
+        },
+        "whatsapp_color": {
+          "label": "Color de Fondo"
+        }
+      }
+    },
+
+
